@@ -210,7 +210,12 @@ jobs:
         shell: bash
         run: |
           echo "date=$(date +'%m/%d/%Y %H:%M:%S')" >> "$GITHUB_ENV"
-
+          whoami
+          ls -la
+          ifconfig
+          cat $GITHUB_ENV
+          echo "$GITHUB_ENV"
+          
       - name: Run Type is Daily
         if: ${{ github.event_name == 'schedule' }}
         shell: bash
